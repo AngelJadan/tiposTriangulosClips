@@ -3,7 +3,7 @@
 (ladob 30)
 (ladoc 30)
 (ladoa 50)
-(ladob 50
+(ladob 50)
 (ladoc 40)
 (ladoa 60)
 (ladob 90)
@@ -13,8 +13,7 @@
 (igual-a ?ladoa ?ladob ?ladoc)
 (test (eq ?ladoa ?ladob ?ladoc))
 =>
-(assert (tri-equilatero)
-(equilatero ?ladoa ?ladob ?ladoc)
+(assert (tri-equilatero ?ladoa ?ladob ?ladoc))
 (printout t "equilatero: todos los lados son iguales")
 )
 (defrule isosceles 
@@ -22,15 +21,13 @@
 (tercer-lado ?ladoc)
 (test (eq ?ladoa ?ladob))
 =>
-(assert (tri-isoceles)
-(isoceles ?ladoa ?ladob ?ladoc)
+(assert (tri-isoceles ?ladoa ?ladob ?ladoc))
 (printout t "isoceles: dos lados son iguales y uno desigual")
 )
 (defrule escaleno
 (no-igual ?ladoa ?ladob ?ladoc)
 (test (neq ?ladoa ?ladob ?ladoc))
 =>
-(assert (tri-escaleno)
-(escaleno ?ladoa ?ladob ?ladoc)
+(assert (tri-escaleno ?ladoa ?ladob ?ladoc))
 (printout t "escaleno: todos los lados son diferentes " crlf)
 )
