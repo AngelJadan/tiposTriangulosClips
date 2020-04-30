@@ -1,17 +1,16 @@
-(deffacts inicio
-(ladoa 30)
-(ladob 30)
-(ladoc 30)
-(ladoa 50)
-(ladob 50)
-(ladoc 40)
-(ladoa 60)
-(ladob 90)
-(ladoc 180)
+(defrule inicio
+(initial-fact)
+=>
+(printout t "ingresa lado a" crlf)
+(assert (ladoa (read)))
+(printout t "ingresa lado b" crlf)
+(assert (ladob (read)))
+(printout t "ingresa lado c" crlf)
+(assert (ladoc (read)))
 )
+(
 (defrule equilatero
-(igual-a ?ladoa ?ladob ?ladoc)
-(test (eq ?ladoa ?ladob ?ladoc))
+(eq ?ladoa ?ladob ?ladoc)
 =>
 (assert (tri-equilatero ?ladoa ?ladob ?ladoc))
 (printout t "equilatero: todos los lados son iguales")
